@@ -1,9 +1,9 @@
 import React from "react"
-
+import HomeContainer from "@/containers/home"
 function Homepage() {
   return (
     <>
-      <h1>Homepage</h1>
+      <HomeContainer />
     </>
   )
 }

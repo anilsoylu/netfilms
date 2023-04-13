@@ -2,8 +2,8 @@ import { Inter } from "@next/font/google"
 import "@/styles/reset.css"
 import "@/styles/global.css"
 
-import Header from "@/containers/header"
-import Footer from "@/containers/footer"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 export const metadata = {
   title: "Create Next App",
