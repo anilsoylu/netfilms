@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation"
 import MovieContainer from "@/containers/movie"
-import Movies from "@/mocks/movies.json"
+
+import { fetchSingleMovie } from "@/services/movie"
 
 export async function generateMetadata({ params }) {
-  const movieDetail = Movies.results.find(
-    (movie) => movie.id.toString() === params.id
-  )
+  const movieDetail = await fetchSingleMovie(params.id)
 
   if (movieDetail) {
     return {
@@ -22,9 +21,7 @@ export async function generateMetadata({ params }) {
 }
 
 async function MoviePage({ params, searchParams }) {
-  const movieDetail = Movies.results.find(
-    (movie) => movie.id.toString() === params.id
-  )
+  const movieDetail = await fetchSingleMovie(params.id)
 
   if (!movieDetail) notFound()
 
