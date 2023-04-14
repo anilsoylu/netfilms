@@ -44,6 +44,15 @@ export async function fetchTopRatedMovies() {
   }
 }
 
+export async function fetchUpComingMovies() {
+  try {
+    const res = await fetchData("/movie/upcoming")
+    return res.results
+  } catch (error) {
+    throw new Error("Error happened while fetching upcoming movies", error)
+  }
+}
+
 export async function fetchSingleMovie(movieId) {
   try {
     const res = await fetchData(`/movie/${movieId}`)

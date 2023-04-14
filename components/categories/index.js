@@ -9,7 +9,7 @@ function Catgories({ categories }) {
       {categories.map((category) => (
         <Link
           key={category.id}
-          href={`/category/${category.id}`}
+          href={`/${category.id}`}
           className={styles.category}
         >
           <div className={styles.name}>{category.name}</div>
